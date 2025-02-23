@@ -1,0 +1,166 @@
+body {
+    background: linear-gradient(to bottom, #ffc0cb, #ff69b4); /* Pink gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Dark grey text color */
+    overflow: hidden; /* Prevent scrolling */
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure content is above the background animation */
+}
+
+h1 {
+    color: #fff; /* White text color for better contrast */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    animation: colorchange 2s infinite alternate, textpop 1s infinite alternate; /* Add animations */
+}
+
+@keyframes colorchange {
+    0% {
+        color: #ff69b4;
+    }
+    100% {
+        color: #ff1493; /* Slightly darker pink */
+    }
+}
+
+@keyframes textpop {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1); /* Slight pop effect */
+    }
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px; /* Slightly rounded corners for the image */
+    border: 2px solid #fff; /* White border for better contrast */
+}
+
+.landing-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.landing-button:hover {
+    background-color: #555; /* Darker grey on hover */
+}
+
+/* Animated background with cat images */
+@keyframes moveCats {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.cat {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: url('cat.png') no-repeat center center; /* Replace with your cat image */
+    background-size: contain;
+    animation: moveCats 10s linear infinite;
+    bottom: -100px;
+}
+
+/* Random positions and delays for cats */
+.cat:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.cat:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.cat:nth-child(3) {
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.cat:nth-child(4) {
+    left: 40%;
+    animation-delay: 6s;
+}
+
+.cat:nth-child(5) {
+    left: 50%;
+    animation-delay: 8s;
+}
+
+.cat:nth-child(6) {
+    left: 60%;
+    animation-delay: 10s;
+}
+
+.cat:nth-child(7) {
+    left: 70%;
+    animation-delay: 12s;
+}
+
+.cat:nth-child(8) {
+    left: 80%;
+    animation-delay: 14s;
+}
+
+.cat:nth-child(9) {
+    left: 90%;
+    animation-delay: 16s;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 300px) {
+    h1 {
+        font-size: 2em; /* Smaller font size for mobile */
+    }
+
+    .images {
+        flex-direction: column;
+        gap: 10px; /* Reduce gap for mobile */
+    }
+
+    img {
+        width: 100px; /* Adjust image size for mobile */
+    }
+
+    .landing-button {
+        width: 80%; /* Adjust button width for mobile */
+        padding: 10px; /* Adjust button padding for mobile */
+    }
+
+    .cat {
+        width: 30px; /* Smaller cat images for mobile */
+        height: 30px;
+    }
+}
